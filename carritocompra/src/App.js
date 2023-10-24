@@ -1,21 +1,15 @@
+import { Routes, Route } from 'react-router-dom';
+import AppUser from './layout/AppUser/AppUser';
+import AdminApp from './layout/AppAdmin/AdminApp';
 
-import './App.css';
-import PrimarySearchAppBar from './components/appBar/PrimarySearchAppBar';
-import SimpleContainer from './components/container/SimpleContainer';
 
-function App() {
-  return (
-        <div>
-        <header>
-          <PrimarySearchAppBar/>
-        </header>
-        <br></br>
-        <main>
-          <SimpleContainer/>
-        </main>
-        </div>
-       
-  );
-}
-
-export default App;
+const App = () => {
+    return (
+          <Routes>
+             <Route path="/" element={<AdminApp />} />
+             <Route path="/products" element={<AppUser />} />
+          </Routes>
+    );
+   };
+   
+   export default App;
